@@ -10,7 +10,7 @@ script:
 
 after_success:
   - docker build -t vedlatha111/multi-client ./client
-  - docker build -t vedlatha111/multi-ngnix ./nginx
+  - docker build -t vedlatha111/multi-nginx ./nginx
   - docker build -t vedlatha111/multi-server ./server
   - docker build -t vedlatha111/multi-worker ./worker
   
