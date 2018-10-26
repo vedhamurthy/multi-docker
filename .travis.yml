@@ -3,24 +3,24 @@ services:
   - docker
 
 before_install:
-  - docker build -t vedhamurthy/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t vedlatha111/react-test -f ./client/Dockerfile.dev ./client
   
 script:
-  - docker run vedhamurthy/react-test npm test -- --coverage
+  - docker run vedlatha111/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t vedhamurthy/multi-client ./client
-  - docker build -t vedhamurthy/multi-ngnix ./nginx
-  - docker build -t vedhamurthy/multi-server ./server
-  - docker build -t vedhamurthy/multi-worker ./worker
+  - docker build -t vedlatha111/multi-client ./client
+  - docker build -t vedlatha111/multi-ngnix ./nginx
+  - docker build -t vedlatha111/multi-server ./server
+  - docker build -t vedlatha111/multi-worker ./worker
   
   # log into the docker cLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   #  take those images and push them to docker hub
-  - docker push vedhamurthy/multi-client
-  - docker push vedhamurthy/multi-nginx
-  - docker push vedhamurthy/multi-server
-  - docker push vedhamurthy/multi-worker
+  - docker push vedlatha111/multi-client
+  - docker push vedlatha111/multi-nginx
+  - docker push vedlatha111/multi-server
+  - docker push vedlatha111/multi-worker
  
 
